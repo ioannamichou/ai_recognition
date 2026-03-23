@@ -1,17 +1,17 @@
-# 🚁 Drone Thermal AI Recognition Pipeline
+# Drone Thermal AI Recognition Pipeline
 
 An end-to-end, multi-stage processing pipeline for drone-captured video streams. This project utilizes a distributed architecture to capture, encode, and analyze thermal/visual data using **YOLOv8** and **Docker**.
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 The project is split into three main nodes to distribute processing power efficiently:
 
 1.  **Drone (Raspberry Pi):** Captures raw frames and streams them over the network.
 2.  **Base Station (PC 1 - Laptop):** * Receives raw frame data via Socket.
     * Encodes frames into compressed **MP4** files using OpenCV.
-    * Automatically forwards completed video segments to the AI Server.
+    * Manually forwards completed video segments to the AI Server.
 3.  **AI Inference Server (PC 2):**
     * Receives MP4 files.
     * Runs **YOLOv8 (Ultralytics)** object detection.
@@ -20,7 +20,7 @@ The project is split into three main nodes to distribute processing power effici
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 * **Language:** Python 3.9+
 * **AI Model:** YOLOv8 (Ultralytics)
@@ -31,7 +31,7 @@ The project is split into three main nodes to distribute processing power effici
 
 ---
 
-## 🛠 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 * Docker & Docker Compose installed on both machines.
@@ -50,7 +50,7 @@ docker-compose up -d --build
 
 
 
-📊 Features
+Features
 [x] Real-time frame-to-video encoding.
 
 [x] Automated file transfer between distributed nodes.
@@ -61,6 +61,6 @@ docker-compose up -d --build
 
 [x] Headless Docker environment for easy deployment.
 
-## 📝 License
+## License
 **Private / Personal Project.** All rights reserved. This code is for personal use only.
 

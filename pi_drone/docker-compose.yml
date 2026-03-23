@@ -1,0 +1,7 @@
+services:
+  drone-camera:
+    build: .
+    container_name: pi-sender
+    devices:
+      - "/dev/video0:/dev/video0"
+    restart: "no"

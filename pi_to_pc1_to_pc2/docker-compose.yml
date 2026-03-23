@@ -1,0 +1,9 @@
+services:
+  drone-station:
+    build: .
+    container_name: pc1-drone-station
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app
+    restart: always

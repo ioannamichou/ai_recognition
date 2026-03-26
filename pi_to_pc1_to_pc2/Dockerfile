@@ -10,9 +10,13 @@ WORKDIR /app
 # Εγκατάσταση βιβλιοθηκών Python
 RUN pip install --no-cache-dir opencv-python-headless numpy
 
-# ΑΝΤΙΓΡΑΦΗ των αρχείων που πραγματικά χρησιμοποιούμε
+# Αντιγραφή των scripts και του entrypoint
 COPY receiver.py .
 COPY send_to_server.py .
+COPY entrypoint.sh .
 
-# Εκτέλεση του receiver (το -u βοηθάει να βλέπεις τα logs σε πραγματικό χρόνο)
-CMD ["python", "-u", "receiver.py"]
+# Δίνουμε δικαιώματα εκτέλεσης στο entrypoint script
+RUN chmod +x entrypoint.sh
+
+# Ορίζουμε το entrypoint (αφαιρούμε το CMD)
+ENTRYPOINT ["./entrypoint.sh"]

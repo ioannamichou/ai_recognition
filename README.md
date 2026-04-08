@@ -44,13 +44,13 @@ cd pc2-ai-server
 docker-compose up -d --build
 Access the Database via http://localhost:8080 (phpMyAdmin).
 
-2. Start the Base Station (PC 1 - Laptop):
+**2. Start the Base Station (PC 1 - Laptop):
    cd pc1-laptop
 docker-compose up -d --build
 
 
 
-Features
+###Features
 [x] Real-time frame-to-video encoding.
 
 [x] Automated file transfer between distributed nodes.

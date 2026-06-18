@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ground-station-pc"
+version = "1.0.0"
+description = "PC Ground Station GUI and Receiver for Drone System"
+requires-python = ">=3.8"
+dependencies = [
+    "pygame",
+    "mysql-connector-python",
+    "flask",
+    "requests",
+    "paramiko"
+]
+
+[project.scripts]
+# Αυτή η εντολή θα ανοίγει αυτόματα το γραφικό περιβάλλον!
+drone-station = "station.drone_station:main"
